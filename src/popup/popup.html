@@ -1,0 +1,60 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>TimeLens Settings</title>
+    <link rel="stylesheet" href="popup.css">
+</head>
+
+<body>
+    <div class="container">
+        <header>
+            <img src="../../icons/icon48.png" alt="TimeLens Logo" class="logo">
+            <h1>TimeLens</h1>
+        </header>
+
+        <main>
+            <div class="setting-group">
+                <label for="timezone-select">Local Timezone</label>
+                <select id="timezone-select">
+                    <!-- Populated by JS -->
+                </select>
+            </div>
+
+            <div class="setting-group toggle-group">
+                <label for="auto-detect">Auto-detect Timezone</label>
+                <label class="switch">
+                    <input type="checkbox" id="auto-detect">
+                    <span class="slider round"></span>
+                </label>
+            </div>
+
+            <div class="setting-group toggle-group">
+                <label for="use-24hour">Use 24-hour Format</label>
+                <label class="switch">
+                    <input type="checkbox" id="use-24hour">
+                    <span class="slider round"></span>
+                </label>
+            </div>
+
+            <div class="setting-group toggle-group">
+                <label for="extension-enabled">Enable TimeLens</label>
+                <label class="switch">
+                    <input type="checkbox" id="extension-enabled">
+                    <span class="slider round"></span>
+                </label>
+            </div>
+        </main>
+
+        <footer>
+            <p>TimeLens Active</p>
+        </footer>
+    </div>
+    <script src="../utils/date-utils.js"></script>
+    <script src="../utils/storage-utils.js"></script>
+    <script src="popup.js"></script>
+</body>
+
+</html>

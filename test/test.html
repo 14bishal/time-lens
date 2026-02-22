@@ -1,0 +1,84 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>TimeLens Test Page</title>
+    <style>
+        body {
+            font-family: sans-serif;
+            padding: 2em;
+            line-height: 1.6;
+            max-width: 800px;
+            margin: 0 auto;
+        }
+
+        section {
+            margin-bottom: 2em;
+            padding: 1em;
+            border: 1px solid #ddd;
+            border-radius: 8px;
+        }
+
+        h2 {
+            margin-top: 0;
+        }
+
+        .dynamic-area {
+            background: #f0f9ff;
+            padding: 10px;
+            min-height: 50px;
+        }
+    </style>
+</head>
+
+<body>
+    <h1>TimeLens Verification</h1>
+    <p>This page contains various timestamp formats to test the TimeLens extension.</p>
+
+    <section>
+        <h2>1. ISO 8601 Formats</h2>
+        <p>Standard ISO: 2026-02-19T12:00:00Z</p>
+        <p>With Milliseconds: 2026-02-19T14:30:00.123Z</p>
+        <p>In sentence: The server restarted at 2026-02-19T08:15:00Z unexpectedly.</p>
+    </section>
+
+    <section>
+        <h2>2. Explicit UTC/GMT Formats</h2>
+        <p>Full UTC: 2026-05-20 16:00:00 UTC</p>
+        <p>Full GMT: 2026-05-20 16:00:00 GMT</p>
+        <p>Short Month UTC: Feb 19 18:45 UTC</p>
+        <p>Short Month GMT: Feb 19 18:45:30 GMT</p>
+        <p>ISO with Offset: 2026-02-19T12:00:00+05:30</p>
+        <p>In sentence: Event starts at May 01 09:00:00 UTC sharp.</p>
+    </section>
+
+    <section>
+        <h2>3. Implicit UTC (No Timezone)</h2>
+        <p>Short: 2026-01-01 00:00</p>
+        <p>With Seconds: 2026-01-01 00:00:30</p>
+    </section>
+
+    <section>
+        <h2>4. Dynamic Content</h2>
+        <p>Timestamps added below after 3 seconds:</p>
+        <div id="dynamic-content" class="dynamic-area">Waiting...</div>
+    </section>
+
+    <section>
+        <h2>4. Selection Test</h2>
+        <p>Highlight the following text to test the popup:</p>
+        <p>2026-12-25T00:00:00Z</p>
+        <p>Or this unstructured one (might not work if strict): 2026-01-01 00:00 UTC</p>
+    </section>
+
+    <script>
+        setTimeout(() => {
+            const container = document.getElementById('dynamic-content');
+            container.innerHTML = '<p>New timestamp appeared: 2026-03-15T10:00:00Z</p>';
+        }, 3000);
+    </script>
+</body>
+
+</html>
